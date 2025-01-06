@@ -7,8 +7,9 @@ const App = () => {
     const postsPerPage = 7;
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts').then(res => setPosts(res.data));
-    }, []);
+        axios.get('/api/posts').then(res => setPosts(res.data));
+    },
+     []);
 
     const currentPosts = posts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
